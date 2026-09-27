@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#120813">
+<title>For Dudu ♡ — Our Love Story</title>
+<style>
+:root{
+  --rose:#ff9fc2;--pink:#ffd2e1;--cream:#fff7fa;--wine:#170914;
+  --glass:rgba(28,9,22,.55);--line:rgba(255,220,232,.20);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  min-height:100vh;color:var(--cream);background:#100710;
+  font-family:Georgia,"Times New Roman",serif;overflow-x:hidden;
+}
+body:before{
+  content:"";position:fixed;inset:0;z-index:-10;
+  background:
+    linear-gradient(135deg,rgba(10,3,10,.90),rgba(77,18,48,.48),rgba(7,3,12,.92)),
+    url("dudu-photo.png") center/cover fixed;
+  filter:saturate(1.08);
+}
+body:after{
+  content:"";position:fixed;inset:0;z-index:-9;pointer-events:none;
+  background:
+    radial-gradient(circle at 50% 12%,rgba(255,174,207,.24),transparent 30%),
+    radial-gradient(circle at 15% 85%,rgba(255,100,160,.13),transparent 30%),
+    radial-gradient(circle at 90% 55%,rgba(184,112,255,.10),transparent 28%);
+}
+#stars{position:fixed;inset:0;z-index:-5;pointer-events:none}
+.star{position:absolute;width:2px;height:2px;border-radius:50%;background:white;box-shadow:0 0 12px white;animation:twinkle 2.5s ease-in-out infinite alternate}
+@keyframes twinkle{from{opacity:.15;transform:scale(.5)}to{opacity:1;transform:scale(1.7)}}
+
+#intro{
+  position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:24px;
+  background:radial-gradient(circle at center,rgba(91,25,58,.75),rgba(9,3,10,.98));
+  transition:opacity .8s,visibility .8s;
+}
+#intro.hide{opacity:0;visibility:hidden;pointer-events:none}
+.introCard{
+  width:min(680px,100%);padding:55px 30px;text-align:center;border-radius:36px;
+  border:1px solid rgba(255,220,235,.24);background:rgba(24,7,19,.66);
+  backdrop-filter:blur(22px);box-shadow:0 35px 120px #000b;
+}
+.introHeart{font-size:60px;animation:pulse 1.8s infinite}
+@keyframes pulse{50%{transform:scale(1.12);filter:drop-shadow(0 0 20px #ff8fb8)}}
+.introCard small{font:700 10px Arial,sans-serif;letter-spacing:4px;color:#ffd4e2;text-transform:uppercase}
+.introCard h1{font-size:clamp(48px,10vw,90px);font-style:italic;margin:14px 0}
+.introCard p{font:15px/1.8 Arial,sans-serif;color:#f5dce6;margin:auto;max-width:520px}
+.startBtn{
+  margin-top:28px;border:1px solid #ffd6e566;border-radius:999px;padding:15px 25px;
+  color:#4b102e;background:linear-gradient(135deg,#ffe5ef,#ff9fc2);
+  font:800 11px Arial,sans-serif;letter-spacing:2px;cursor:pointer;
+  box-shadow:0 10px 35px #ff78ad44;transition:.3s;
+}
+.startBtn:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 15px 45px #ff78ad66}
+.musicHint{display:block;margin-top:13px;color:#cbaab8;font:11px Arial,sans-serif}
+
+nav{position:fixed;top:0;left:0;right:0;z-index:30;padding:14px 18px;display:flex;justify-content:center}
+.navbox{
+  display:flex;align-items:center;gap:5px;padding:7px;border:1px solid var(--line);
+  background:rgba(19,6,16,.68);backdrop-filter:blur(18px);border-radius:999px;
+  box-shadow:0 12px 40px #0008;
+}
+.navbox a,.music{
+  color:#ffe9f2;text-decoration:none;font:700 10px Arial,sans-serif;letter-spacing:1.3px;
+  padding:10px 12px;border-radius:999px;border:0;background:transparent;cursor:pointer;
+}
+.navbox a:hover,.music:hover{background:#ffb3d21c}
+.music.playing{background:#ff9fc222;color:#ffd6e4}
+
+section{padding:110px 18px}
+.hero{min-height:100vh;display:grid;place-items:center;text-align:center;padding-top:85px}
+.heroCard,.glass{
+  width:min(1080px,100%);margin:auto;border:1px solid var(--line);
+  background:var(--glass);backdrop-filter:blur(17px);
+  box-shadow:0 30px 100px #0008,inset 0 0 80px #ffb1d20a;
+}
+.heroCard{padding:70px 24px;border-radius:42px;position:relative;overflow:hidden}
+.heroCard:after{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:linear-gradient(115deg,transparent 25%,#fff3 50%,transparent 75%);
+  transform:translateX(-120%);animation:shine 6s infinite;
+}
+@keyframes shine{60%,100%{transform:translateX(120%)}}
+.crown{font-size:45px;filter:drop-shadow(0 0 18px #ff9fc2)}
+.eyebrow{font:700 10px Arial,sans-serif;letter-spacing:5px;color:#ffd3e2;text-transform:uppercase;margin-top:12px}
+h1{font-size:clamp(55px,11vw,125px);line-height:.86;font-style:italic;margin:20px 0;text-shadow:0 10px 50px #ff5d9c55}
+.hero p{font:16px/1.8 Arial,sans-serif;color:#ffe9f2}
+.pill{display:inline-block;margin-top:25px;padding:10px 18px;border:1px solid #ffc5da55;border-radius:999px;background:#fff1f609;font:700 10px Arial,sans-serif;letter-spacing:2px}
+.scroll{display:inline-block;margin-top:30px;color:#ffd0df;text-decoration:none;font:700 11px Arial,sans-serif;letter-spacing:2px}
+
+.glass{padding:42px;border-radius:36px}
+h2{text-align:center;font-size:clamp(36px,6vw,65px);font-style:italic;margin-bottom:10px}
+.sectionLead{text-align:center;max-width:760px;margin:auto;color:#f5dbe5;font:15px/1.85 Arial,sans-serif}
+.photoFrame{
+  margin:32px auto 0;max-width:900px;padding:12px;background:linear-gradient(145deg,#fffafd,#f0aec8);
+  box-shadow:0 30px 80px #0009;border-radius:6px;transform:rotate(-.45deg);
+}
+.photoFrame img{display:block;width:100%;max-height:690px;object-fit:cover}
+.caption{text-align:center;color:#5b1e3a;background:#fff4f8;padding:16px 8px 9px;font-size:18px;font-style:italic}
+.badges{display:flex;justify-content:center;gap:9px;flex-wrap:wrap;margin-top:24px}
+.badge{padding:9px 13px;border:1px solid #ffd0df25;border-radius:999px;background:#ffb5d211;color:#ffd8e6;font:700 10px Arial,sans-serif;letter-spacing:1px}
+
+.counter{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:30px}
+.stat{text-align:center;padding:23px 8px;border-radius:22px;border:1px solid #ffd1df18;background:#fff0f706}
+.stat b{display:block;font:800 35px Arial,sans-serif;color:#ffd1e0}
+.stat span{font:10px Arial,sans-serif;letter-spacing:1.8px;text-transform:uppercase;color:#dcbac8}
+.counterNote{text-align:center;margin-top:15px;color:#cfaebb;font:11px Arial,sans-serif}
+
+.letter{
+  margin-top:30px;padding:34px;border-radius:28px;border:1px solid #ffd0df1c;
+  background:linear-gradient(145deg,#fff7fa12,#ff9fc208);
+}
+.letter h3{text-align:center;font-size:30px;font-style:italic;color:#ffd2e1;margin-bottom:20px}
+.letter p{font-size:18px;line-height:2;color:#ffe9f0;text-align:center}
+.signature{text-align:center;margin-top:24px;font-size:27px;font-style:italic;color:#ffb5d0}
+
+.reasons{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:30px}
+.reason{padding:27px 20px;text-align:center;border-radius:25px;border:1px solid #ffd1df19;background:#fff0f707;transition:.35s}
+.reason:hover{transform:translateY(-8px);background:#ffb4d212;box-shadow:0 15px 40px #0005}
+.icon{font-size:32px;margin-bottom:12px}.reason h3{font-size:20px;margin-bottom:8px}.reason p{font:14px/1.7 Arial,sans-serif;color:#e9cbd7}
+
+.timeline{position:relative;max-width:760px;margin:35px auto 0}
+.timeline:before{content:"";position:absolute;left:18px;top:8px;bottom:8px;width:1px;background:#ffc4d833}
+.moment{position:relative;padding:0 0 25px 55px}
+.dot{position:absolute;left:9px;top:5px;width:19px;height:19px;border-radius:50%;background:#ff9fc2;box-shadow:0 0 20px #ff7eae}
+.moment h3{font-size:20px;color:#ffd3e1;margin-bottom:5px}.moment p{font:14px/1.7 Arial,sans-serif;color:#e8c9d5}
+
+.envelopeArea{text-align:center;margin-top:30px}
+.envelope{
+  margin:25px auto;width:min(470px,100%);min-height:250px;padding:36px;border-radius:22px;
+  background:linear-gradient(145deg,#fff0f6,#ffb2cf);color:#53132f;
+  box-shadow:0 25px 70px #0009;transition:.5s;
+}
+.envelope.open{transform:translateY(-5px);box-shadow:0 30px 90px #ff75ad33}
+.envelope:before{content:"♡";display:block;font-size:54px;margin-bottom:10px}
+.envelope p{font-size:17px;line-height:1.75}
+.secret{border:0;cursor:pointer;padding:14px 22px;border-radius:999px;background:#ffafca;color:#48122d;font:800 10px Arial,sans-serif;letter-spacing:1.5px;box-shadow:0 10px 25px #0005}
+.hiddenMsg{display:none;margin-top:16px;font-style:italic}.hiddenMsg.show{display:block}
+
+footer{text-align:center;padding:75px 20px 95px;color:#c9a9b7;font:12px/1.8 Arial,sans-serif}
+.footerHeart{font-size:25px;color:#ff9fc2}
+
+.petal{position:fixed;top:-30px;z-index:5;pointer-events:none;animation:fall linear forwards;opacity:.75}
+@keyframes fall{to{transform:translate3d(var(--drift),110vh,0) rotate(650deg);opacity:0}}
+.toast{
+  position:fixed;left:50%;bottom:25px;transform:translateX(-50%) translateY(100px);z-index:70;
+  padding:13px 20px;border-radius:999px;background:#280c20ee;border:1px solid #ffc4da44;
+  color:#ffe7ef;font:700 11px Arial,sans-serif;transition:.4s;box-shadow:0 12px 35px #0008;
+}
+.toast.show{transform:translateX(-50%) translateY(0)}
+#top{position:fixed;right:18px;bottom:18px;z-index:20;width:42px;height:42px;border-radius:50%;border:1px solid #ffd4e433;background:#230b1ddd;color:#ffd9e6;cursor:pointer;display:none}
+#top.show{display:block}
+
+@media(max-width:720px){
+  nav{padding:8px}.navbox a{display:none}.navbox .music{display:block}
+  .heroCard{padding:50px 18px}.glass{padding:25px 16px}
+  section{padding:85px 11px}.counter{grid-template-columns:repeat(2,1fr)}
+  .reasons{grid-template-columns:1fr}.letter{padding:25px 16px}.letter p{font-size:16px}
+}
+</style>
+</head>
+<body>
+
+<div id="intro">
+  <div class="introCard">
+    <div class="introHeart">♡</div>
+    <small>A little world made only for</small>
+    <h1>Dudu</h1>
+    <p>Before you enter, let our song play and let this little love story begin. Every part of this page was made with you in mind. ❤️</p>
+    <button class="startBtn" id="startBtn">START OUR LOVE STORY ♫</button>
+    <span class="musicHint">Tap once if your browser blocks automatic music.</span>
+  </div>
+</div>
+
+<div id="stars"></div>
+
+<nav>
+  <div class="navbox">
+    <a href="#memory">MEMORY</a><a href="#letter">LETTER</a><a href="#moments">MOMENTS</a><a href="#reasons">WHY YOU</a><a href="#secret">SECRET</a>
+    <button class="music" id="musicBtn">♫ MUSIC</button>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="heroCard">
+    <div class="crown">♡</div>
+    <div class="eyebrow">For the girl I call Dudu</div>
+    <h1>Our Love Story</h1>
+    <p>One year. Two months. Countless little moments.<br>And somehow, I still get happy just knowing you're mine.</p>
+    <div class="pill">JULY 28 • OUR MONTHSARY • AND STILL CHOOSING YOU</div>
+    <a class="scroll" href="#memory">COME, DUDU ↓</a>
+  </div>
+</header>
+
+<section id="memory">
+  <div class="glass">
+    <h2>One Picture, A Thousand Feelings</h2>
+    <p class="sectionLead">A single photo could never contain our whole story. But every time I look at this, I remember how thankful I am that our paths met.</p>
+    <div class="photoFrame">
+      <img src="dudu-photo.png" alt="Dudu and me">
+      <div class="caption">“Forever begins with a promise.” ♡</div>
+    </div>
+    <div class="badges">
+      <span class="badge">♡ MY DUDU</span><span class="badge">♡ MY PERSON</span><span class="badge">♡ MY HOME</span><span class="badge">♡ MY FAVORITE</span>
+    </div>
+    <div class="counter">
+      <div class="stat"><b>1</b><span>Year</span></div>
+      <div class="stat"><b>2</b><span>Months</span></div>
+      <div class="stat"><b id="daysTogether">—</b><span>Days Together</span></div>
+      <div class="stat"><b>∞</b><span>More To Come</span></div>
+    </div>
+    <div class="counterNote" id="dateNote">Counting every day since July 28, 2025. ♡</div>
+  </div>
+</section>
+
+<section id="letter">
+  <div class="glass">
+    <h2>A Letter For Dudu</h2>
+    <div class="letter">
+      <h3>My Dudu,</h3>
+      <p>
+        Happy our beautiful monthsary, Dudu. ❤️<br><br>
+        Thank you for becoming one of the most beautiful parts of my life. Thank you for the laughter,
+        the conversations, the little moments, the patience, and even the difficult days that taught us
+        how to understand each other better.<br><br>
+        I don't need our story to be perfect. I just want it to be real — a story where we keep learning,
+        forgiving, growing, praying, laughing, and choosing each other again and again.<br><br>
+        Dudu, I hope that when you look back at this little website someday, you remember that there was
+        someone who was genuinely thankful for you. Someone who wanted more ordinary days with you,
+        because somehow, ordinary days become special when you're there.<br><br>
+        Whatever the future brings, I want to keep making memories with you. More pictures. More laughter.
+        More places. More quiet nights. More dreams. More “remember when?” moments.<br><br>
+        <strong>Happy Monthsary, my Dudu. I love you. ❤️</strong>
+      </p>
+      <div class="signature">Always yours, Glenn ♡</div>
+    </div>
+  </div>
+</section>
+
+<section id="moments">
+  <div class="glass">
+    <h2>The Little Things</h2>
+    <p class="sectionLead">The biggest part of our story isn't one perfect moment. It's all the small moments that became ours.</p>
+    <div class="timeline">
+      <div class="moment"><span class="dot"></span><h3>The First Chapter</h3><p>Somehow, two people became “us.” And that beginning became a story worth protecting.</p></div>
+      <div class="moment"><span class="dot"></span><h3>The Random Conversations</h3><p>The simple talks, jokes, teasing, and “what are you doing?” messages became memories too.</p></div>
+      <div class="moment"><span class="dot"></span><h3>The Difficult Days</h3><p>Not every day was easy. But every challenge gave us another chance to understand and choose each other.</p></div>
+      <div class="moment"><span class="dot"></span><h3>Today</h3><p>1 year and 2 months later, this story is still being written — and I hope there are many more chapters.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="reasons">
+  <div class="glass">
+    <h2>Why I Love Having You</h2>
+    <p class="sectionLead">Not because you're perfect. Because you're you — and somehow, you became home to my heart.</p>
+    <div class="reasons">
+      <div class="reason"><div class="icon">🌷</div><h3>Your Smile</h3><p>There are moments when seeing you smile is enough to make an ordinary day feel beautiful.</p></div>
+      <div class="reason"><div class="icon">✨</div><h3>Our Little Moments</h3><p>The silly conversations and tiny memories are often the ones I treasure the most.</p></div>
+      <div class="reason"><div class="icon">🌙</div><h3>Our Future</h3><p>I want more days where we can look at each other and say, “We made it through another chapter.”</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="secret">
+  <div class="glass">
+    <h2>Something Only Dudu Can Open</h2>
+    <p class="sectionLead">You reached the end, but I saved one more little message for you. 💌</p>
+    <div class="envelopeArea">
+      <div class="envelope" id="envelope">
+        <p><strong>To the girl I call Dudu...</strong></p>
+        <p id="secretText" class="hiddenMsg">If I had to choose you all over again, I'd still choose you. Not because our story is perfect, but because it's ours. And if God allows me, I want to keep building beautiful chapters with you. ❤️</p>
+      </div>
+      <button class="secret" id="secretBtn">OPEN MY SECRET LETTER 💌</button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footerHeart">♡</div>
+  Made especially for Dudu<br>
+  Every July 28 — another chapter of us. ♡
+</footer>
+
+<button id="top" title="Back to top">↑</button>
+<audio id="music" loop preload="auto"><source src="music.mp3" type="audio/mpeg"></audio>
+<div class="toast" id="toast">Our song is ready ♡</div>
+
+<script>
+const RELATIONSHIP_START = "2025-07-28"; 
+// Put the real start date here as YYYY-MM-DD when you want the exact day counter.
+// Example: "2025-07-28"
+
+const stars=document.getElementById('stars');
+for(let i=0;i<95;i++){
+  const s=document.createElement('i');s.className='star';
+  s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';
+  s.style.animationDelay=Math.random()*3+'s';
+  s.style.animationDuration=(1.5+Math.random()*2.7)+'s';
+  stars.appendChild(s);
+}
+function petal(){
+  const p=document.createElement('div');p.className='petal';
+  p.textContent=['♡','♥','✦','🌸'][Math.floor(Math.random()*4)];
+  p.style.left=Math.random()*100+'vw';
+  p.style.fontSize=(12+Math.random()*18)+'px';
+  p.style.setProperty('--drift',(Math.random()*180-90)+'px');
+  p.style.animationDuration=(7+Math.random()*7)+'s';
+  document.body.appendChild(p);
+  setTimeout(()=>p.remove(),15000);
+}
+setInterval(petal,850);
+
+const music=document.getElementById('music');
+const musicBtn=document.getElementById('musicBtn');
+const startBtn=document.getElementById('startBtn');
+const intro=document.getElementById('intro');
+const toast=document.getElementById('toast');
+
+function showToast(msg){
+  toast.textContent=msg;toast.classList.add('show');
+  setTimeout(()=>toast.classList.remove('show'),2200);
+}
+async function startMusic(){
+  try{
+    await music.play();
+    musicBtn.textContent='❚❚ MUSIC';
+    musicBtn.classList.add('playing');
+    return true;
+  }catch(e){
+    return false;
+  }
+}
+startBtn.addEventListener('click',async()=>{
+  const played=await startMusic();
+  intro.classList.add('hide');
+  showToast(played?'Our song is playing ♡':'Tap MUSIC anytime to start our song ♡');
+});
+musicBtn.addEventListener('click',async()=>{
+  if(music.paused){
+    const played=await startMusic();
+    showToast(played?'Our music is playing ♡':'Your browser blocked playback — tap again ♡');
+  }else{
+    music.pause();musicBtn.textContent='♫ MUSIC';musicBtn.classList.remove('playing');
+    showToast('Music paused ♡');
+  }
+});
+// Best-effort autoplay. Browsers may block audible autoplay until a user gesture.
+window.addEventListener('load',async()=>{
+  const played=await startMusic();
+  if(played) setTimeout(()=>intro.classList.add('hide'),700);
+});
+document.addEventListener('pointerdown',async()=>{
+  if(music.paused) await startMusic();
+},{once:true});
+
+function updateDays(){
+  const el=document.getElementById('daysTogether'), note=document.getElementById('dateNote');
+  if(!RELATIONSHIP_START){el.textContent='—';return;}
+  const start=new Date(RELATIONSHIP_START+'T00:00:00');
+  const now=new Date();
+  const diff=Math.max(0,Math.floor((now-start)/86400000));
+  el.textContent=diff.toLocaleString();
+  note.textContent='Counting from '+start.toLocaleDateString(undefined,{year:'numeric',month:'long',day:'numeric'})+' ♡';
+}
+updateDays();
+
+document.getElementById('secretBtn').onclick=()=>{
+  const msg=document.getElementById('secretText');
+  const env=document.getElementById('envelope');
+  const open=msg.classList.toggle('show');
+  env.classList.toggle('open',open);
+  document.getElementById('secretBtn').textContent=open?'CLOSE MY SECRET LETTER 💗':'OPEN MY SECRET LETTER 💌';
+};
+const topBtn=document.getElementById('top');
+window.addEventListener('scroll',()=>topBtn.classList.toggle('show',scrollY>500));
+topBtn.onclick=()=>scrollTo({top:0,behavior:'smooth'});
+</script>
+</body>
+</html>
